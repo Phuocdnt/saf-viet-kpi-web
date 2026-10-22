@@ -4,7 +4,7 @@
 (function(){
 'use strict';
 const root=document.documentElement,kind=root.dataset.kind,uiSrc=root.dataset.ui,KEY='safviet-kpi-criteria-v1-'+kind;
-const NAME={paul:'Paul',thong:'Thông',thy:'Thy'},K=window.KPI,H=window.KPIHelp;
+const NAME={paul:'Paul',thong:'Thông',thy:'Thy'},FILE={paul:'Paul',thong:'Thong',thy:'Thy'},K=window.KPI,H=window.KPIHelp;
 const fail=m=>{throw new Error(m);};
 const str=(v,max)=>typeof v==='string'&&v.length>0&&v.length<=max;
 
@@ -66,7 +66,7 @@ function gate(){
  w.style.cssText='position:fixed;inset:0;z-index:100;background:#F7EFE5;display:flex;align-items:center;justify-content:center;padding:20px;font-family:system-ui,sans-serif;color:#222';
  const box=el('div');box.style.cssText='background:#fff;border:1px solid #C4BDAF;border-top:6px solid '+BLUE+';border-radius:12px;max-width:560px;width:100%;padding:28px 30px;box-shadow:0 6px 24px rgba(0,0,0,.08)';
  const h=el('h1',{},'Saf Viet · KPI — trang của '+NAME[kind]);h.style.cssText='margin:0 0 10px;font-size:22px;color:'+BLUE;
- const p1=el('p',{},'Trang này chưa chứa tiêu chí KPI. Hãy chọn file tiêu chí của bạn (tên dạng Tieu_chi_'+(kind==='paul'?'Paul':NAME[kind])+'.json) trong thư mục KPI trên OneDrive.');
+ const p1=el('p',{},'Trang này chưa chứa tiêu chí KPI. Hãy chọn file tiêu chí của bạn (tên dạng Tieu_chi_'+FILE[kind]+'.json) trong thư mục KPI trên OneDrive.');
  const p2=el('p',{},'Chỉ cần chọn một lần. Trình duyệt sẽ nhớ cho các lần sau. File được đọc ngay trên máy bạn, không gửi đi đâu.');p2.style.cssText='color:#555;font-size:14px';
  const err=el('p');err.style.cssText='color:#b42318;font-weight:600;min-height:1.4em';err.setAttribute('role','alert');
  const btn=el('button',{type:'button'},'Chọn file tiêu chí');btn.style.cssText='background:'+BLUE+';color:#fff;border:0;border-radius:8px;padding:11px 20px;font:600 15px system-ui,sans-serif;cursor:pointer';

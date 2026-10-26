@@ -1,6 +1,6 @@
 (function(root){
 'use strict';
-const VERSION='3.1.0';
+const VERSION='3.1.1';
 const definitions=[];
 const clone=x=>JSON.parse(JSON.stringify(x));
 const numeric=x=>typeof x==='number' && Number.isFinite(x);
